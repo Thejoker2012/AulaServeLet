@@ -20,6 +20,10 @@
 		<servlet-name>ClienteAction</servlet-name>
 		<servlet-class>br.com.unisys.action.ClienteAction</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>CategoriaAction</servlet-name>
+		<servlet-class>br.com.unisys.action.CategoriaAction</servlet-class>
+	</servlet>
 	
 	<servlet-mapping>
 		<servlet-name>LoginAction</servlet-name>
@@ -28,5 +32,9 @@
 	<servlet-mapping>
 		<servlet-name>ClienteAction</servlet-name>
 		<url-pattern>/ClienteAction</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CategoriaAction</servlet-name>
+		<url-pattern>/CategoriaAction</url-pattern>
 	</servlet-mapping>
 </web-app>

@@ -1,7 +1,7 @@
 package br.com.unisys.model;
 
 public class Cliente {
-	
+
 	// Atributos da classe == campos da tabela
 	private long idCliente;
 	private String nomeCliente;
@@ -9,12 +9,12 @@ public class Cliente {
 	private String dataNasc;
 	private String Sexo;
 	private String Telefone;
-	
-	//Construtor
+
+	// Construtor
 	public Cliente() {
-		
+
 	}
-	//Métodos Get e Set
+	// Métodos Get e Set
 
 	public long getIdCliente() {
 		return idCliente;
@@ -63,8 +63,5 @@ public class Cliente {
 	public void setTelefone(String telefone) {
 		Telefone = telefone;
 	}
-	
-	
-	
 
 }

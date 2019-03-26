@@ -1,6 +1,7 @@
 package br.com.unisys.action;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -8,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.unisys.model.Cliente;
+import br.com.unisys.model.ClienteDAO;
 
 public class ClienteAction extends HttpServlet {
 
@@ -32,5 +34,14 @@ public class ClienteAction extends HttpServlet {
 		response.getWriter().println(cliente.getSexo());
 		response.getWriter().println(cliente.getTelefone());
 
+		// DAO
+		try {
+			ClienteDAO dao = new ClienteDAO();
+			dao.adiciona(cliente);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
 	}
 }
