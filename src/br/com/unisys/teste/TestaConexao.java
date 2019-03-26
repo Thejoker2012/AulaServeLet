@@ -9,10 +9,17 @@ public class TestaConexao {
 
 	public static void main(String[] args) throws SQLException {
 		new ConnectionFactory();
-		Connection cn = ConnectionFactory.getConnection();
+		Connection cn;
+		try {
+			cn = ConnectionFactory.getConnection();
+			cn.close();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		System.out.println("Conexão aberta!");
 		
-		cn.close();
+		
 	}
 
 }

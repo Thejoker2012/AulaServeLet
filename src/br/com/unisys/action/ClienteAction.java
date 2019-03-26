@@ -2,7 +2,6 @@ package br.com.unisys.action;
 
 import java.io.IOException;
 import java.sql.SQLException;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,12 +17,13 @@ public class ClienteAction extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
 		// Captura de dados do formulário
 
 		Cliente cliente = new Cliente();
 		cliente.setNomeCliente(request.getParameter("txtNomeCliente"));
 		cliente.setCpf(request.getParameter("txtCpf"));
-		cliente.setDataNasc(request.getParameter("txtDataNasc"));
+		cliente.setDataNasc(request.getParameter("txtDataNasc); "));
 		cliente.setSexo(request.getParameter("txtSexo"));
 		cliente.setTelefone(request.getParameter("txtTelefone"));
 
@@ -42,6 +42,6 @@ public class ClienteAction extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	
+
 	}
 }

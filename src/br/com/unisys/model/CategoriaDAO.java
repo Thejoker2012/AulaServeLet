@@ -12,7 +12,12 @@ public class CategoriaDAO {
 	// Contrutor vazio
 	public CategoriaDAO() throws SQLException {
 
-		this.cn = ConnectionFactory.getConnection();
+		try {
+			this.cn = ConnectionFactory.getConnection();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	// Métodos Adiciona

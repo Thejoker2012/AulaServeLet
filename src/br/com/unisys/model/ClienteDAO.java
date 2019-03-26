@@ -12,7 +12,12 @@ public class ClienteDAO {
 	// Método Contrutor vazio
 	public ClienteDAO() throws SQLException {
 
-		this.cn = ConnectionFactory.getConnection();
+		try {
+			this.cn = ConnectionFactory.getConnection();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	// Método Adiciona
@@ -20,7 +25,7 @@ public class ClienteDAO {
 
 		String sql;
 		sql = "insert into web2.Cliente(id_cliente, nome_cliente, cpf, data_nasc, sexo, telefone)";
-		sql += "values(web2.seq_cliente.nextval,?,?,?,?,?)";
+		sql += "values(web2.seq_cliente.nextval,?,?,to_date(?,'dd/mm/yyyy'),?,?)";
 
 		try {
 			// Passa os parametros para o preparedStatemente
